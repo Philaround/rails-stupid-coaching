@@ -1,12 +1,8 @@
 class QuestionsController < ApplicationController
   def ask
+    params[:question]
   end
 
   def answer
-    search params[:answer]
-
-    @answers = 
-
-
   end
 end

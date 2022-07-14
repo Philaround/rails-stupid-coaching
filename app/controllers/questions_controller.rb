@@ -3,6 +3,13 @@ class QuestionsController < ApplicationController
   end
 
   def answer
-    @answers = ['Great!', 'Silly question, get dressed and go to work!', 'I do not care, get dressed and go to work!']
+    search = params[:question]
+    if search == 'I am going to work'
+      @answer = 'Great!'
+    elsif search.ends_with?('?')
+      @answer = 'Silly question, get dressed and go to work!'
+    else
+      @answer = "I don't care, get dressed and go to work!"
+    end
   end
 end
